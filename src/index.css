@@ -128,3 +128,25 @@
 .genie-button-secondary {
   @apply px-6 py-3 rounded-lg font-medium text-genie-700 bg-genie-100 hover:bg-genie-200 transition-all duration-300 shadow-sm hover:shadow focus:ring-2 focus:ring-genie-400 focus:ring-opacity-50 disabled:opacity-70 disabled:cursor-not-allowed;
 }
+
+/* Dark mode and glassmorphism styles */
+.dark .glass-card {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+}
+
+.dark .glass-panel {
+  @apply backdrop-blur-2xl bg-black/40 border border-white/10;
+}
+
+.glass-card {
+  @apply backdrop-blur-md bg-white/70 border border-white/20 shadow-sm;
+}
+
+.glass-panel {
+  @apply backdrop-blur-lg bg-white/90 border border-black/5;
+}
+
+.text-gradient-dark {
+  @apply bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent;
+}
+

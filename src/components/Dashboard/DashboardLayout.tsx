@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -47,14 +48,14 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       {/* Mobile sidebar backdrop */}
       {isSidebarOpen && isMobile && (
         <div 
-          className="fixed inset-0 bg-black/50 z-40"
+          className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm dark:bg-black/70"
           onClick={closeSidebar}
         />
       )}
       
       {/* Sidebar */}
       <aside 
-        className={`fixed md:static w-64 h-full z-50 md:z-auto bg-sidebar transition-all duration-300 flex flex-col border-r border-sidebar-border ${
+        className={`fixed md:static w-64 h-full z-50 md:z-auto bg-sidebar transition-all duration-300 flex flex-col border-r border-sidebar-border shadow-lg dark:shadow-md dark:shadow-black/20 dark:backdrop-blur-lg ${
           isSidebarOpen ? 'left-0' : '-left-64 md:left-0'
         }`}
       >
@@ -96,14 +97,14 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             <h3 className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Subscription
             </h3>
-            <div className="mt-2 bg-genie-50 rounded-lg p-3 border border-genie-100">
+            <div className="mt-2 bg-genie-50 dark:bg-genie-900/20 rounded-lg p-3 border border-genie-100 dark:border-genie-800/30 backdrop-blur-sm">
               <div className="flex justify-between items-center">
                 <span className="font-medium">Creator Plan</span>
-                <span className="text-xs bg-genie-100 text-genie-700 px-2 py-0.5 rounded-full">Active</span>
+                <span className="text-xs bg-genie-100 dark:bg-genie-900/40 text-genie-700 dark:text-genie-300 px-2 py-0.5 rounded-full">Active</span>
               </div>
               <div className="mt-2 mb-3">
                 <div className="text-sm text-muted-foreground">Videos this month</div>
-                <div className="w-full bg-genie-100 rounded-full h-2 mt-1">
+                <div className="w-full bg-genie-100 dark:bg-genie-900/30 rounded-full h-2 mt-1">
                   <div className="bg-genie-600 h-2 rounded-full" style={{ width: '45%' }}></div>
                 </div>
                 <div className="text-xs text-right mt-1 text-muted-foreground">11/25</div>
@@ -124,9 +125,12 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
               <div className="text-sm font-medium">Jane Smith</div>
               <div className="text-xs text-muted-foreground">jane@example.com</div>
             </div>
-            <button className="ml-auto text-muted-foreground hover:text-destructive transition-colors">
-              <LogOut className="h-5 w-5" />
-            </button>
+            <div className="ml-auto flex items-center space-x-2">
+              <ThemeSwitcher />
+              <button className="text-muted-foreground hover:text-destructive transition-colors">
+                <LogOut className="h-5 w-5" />
+              </button>
+            </div>
           </div>
         </div>
       </aside>
@@ -150,7 +154,10 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             <span className="font-bold text-xl">ShortGenie</span>
           </Link>
           
-          <UserCircle className="h-8 w-8 text-muted-foreground" />
+          <div className="flex items-center space-x-2">
+            <ThemeSwitcher />
+            <UserCircle className="h-8 w-8 text-muted-foreground" />
+          </div>
         </header>
         
         {/* Content */}
