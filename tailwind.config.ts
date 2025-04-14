@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				genie: {
+					50: '#f2f0ff',
+					100: '#e6e1ff',
+					200: '#d0c7ff',
+					300: '#b19fff',
+					400: '#9370ff',
+					500: '#7c4dff',
+					600: '#6e2dfc',
+					700: '#5e20e9',
+					800: '#4d1bc2',
+					900: '#3f199b',
+					950: '#251163',
 				}
 			},
 			borderRadius: {
@@ -84,11 +98,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'hero-gradient': 'linear-gradient(to right bottom, #7c4dff, #6e2dfc, #5e20e9)',
+				'card-gradient': 'linear-gradient(to bottom right, rgba(124, 77, 255, 0.1), rgba(94, 32, 233, 0.05))'
 			}
 		}
 	},
