@@ -21,10 +21,10 @@ const Index = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="#features" className="text-foreground hover:text-genie-600 transition-colors">Features</Link>
-              <Link to="#pricing" className="text-foreground hover:text-genie-600 transition-colors">Pricing</Link>
-              <a href="#" className="text-foreground hover:text-genie-600 transition-colors">Blog</a>
-              <a href="#" className="text-foreground hover:text-genie-600 transition-colors">Support</a>
+              <Link to="/features" className="text-foreground hover:text-genie-600 transition-colors">Features</Link>
+              <Link to="/pricing" className="text-foreground hover:text-genie-600 transition-colors">Pricing</Link>
+              <Link to="/blog" className="text-foreground hover:text-genie-600 transition-colors">Blog</Link>
+              <Link to="/support" className="text-foreground hover:text-genie-600 transition-colors">Support</Link>
             </div>
             
             <div className="flex items-center space-x-4">
